@@ -2,15 +2,23 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Spring Boot-ServiceUserApplication<service-user>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.vega.user.ServiceUserApplication",
+            "projectName": "service-user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ConfigServiceApplication<config-service>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.vega.configservice.ConfigServiceApplication",
+            "mainClass": "com.vega.config.ConfigServiceApplication",
             "projectName": "config-service",
             "args": "",
-            "envFile": "${workspaceFolder}/.env",
-            "GIT_USER": "jose.david.lara@hotmail.com",
-            "GIT_PASSWORD": "Joselara007"
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
