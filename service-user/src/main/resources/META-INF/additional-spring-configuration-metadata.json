@@ -1,0 +1,21 @@
+{"properties": [{
+  "name": "spring.datasource.databse",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.datasource.databse'"
+}]}{"properties": [{
+  "name": "spring.datasource.driver-class-oracle.jdbc.driver.Oracle-driver",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.datasource.driver-class-oracle.jdbc.driver.Oracle-driver'"
+}]}{"properties": [{
+  "name": "spring.datasource.testWhileIdle",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.datasource.testWhileIdle'"
+}]}{"properties": [{
+  "name": "spring.datasource.testWhileIdle",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.datasource.testWhileIdle'"
+}]}{"properties": [{
+  "name": "spring.datasource.testWhileIdle",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.datasource.testWhileIdle'"
+}]}
