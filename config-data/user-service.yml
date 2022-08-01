@@ -2,7 +2,7 @@
 
 #Host Port
 server:
-  port: 8091
+  port: 8092
 
 # Formato para las fechas
 spring:
