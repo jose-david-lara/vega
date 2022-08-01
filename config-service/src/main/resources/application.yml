@@ -10,9 +10,9 @@ spring:
         git:
           uri: https://github.com/jose-david-lara/vega.git
           searchPaths: config-data
-          username: jose.david.lara@hotmail.com
-          password: Joselara007
-          default-label: "develop"
+          username: "jose.david.lara@hotmail.com"
+          password: "Joselara007"
+          default-label: "master"
   security:
     user:
       name: root
