@@ -7,13 +7,11 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.vega.user.modules.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,7 +21,7 @@ import com.vega.user.spring.ErrorMessage;
 
 @RestController
 @RequestMapping(value = "/test")
-public class TestController {
+public class TestController extends UserService {
 
     @PostMapping(value = "/testUser")
     public ResponseEntity<String> testUser(@Valid @RequestBody TestInput testInput, BindingResult result) {
@@ -33,6 +31,12 @@ public class TestController {
         }
 
         return new ResponseEntity<String>("Prueba", HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/getProduct")
+    public ResponseEntity<String> getProductController (){
+
+        return new ResponseEntity<String>(this.getProduct(), HttpStatus.OK);
     }
 
     private String formatMessage(BindingResult result) {
