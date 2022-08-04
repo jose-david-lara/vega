@@ -3,6 +3,10 @@ spring:
   application:
     name: service-user
   config:
-    uri: http://localhost:8081
-    username: root
-    password: s3cr3t
+    import: optional:configserver:http://localhost:8081
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+      username: root
+      password: s3cr3t
