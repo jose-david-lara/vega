@@ -7,7 +7,11 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.vega.user.modules.client.ProductHystrixFallbackFactory;
 import com.vega.user.modules.service.UserService;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -20,6 +24,7 @@ import com.vega.user.modules.model.TestInput;
 import com.vega.user.spring.ErrorMessage;
 
 @RestController
+@EnableHystrix
 @RequestMapping(value = "/test")
 public class TestController extends UserService {
 
@@ -33,11 +38,14 @@ public class TestController extends UserService {
         return new ResponseEntity<String>("Prueba", HttpStatus.OK);
     }
 
+
     @GetMapping(value = "/getProduct")
     public ResponseEntity<String> getProductController (){
 
         return new ResponseEntity<String>(this.getProduct(), HttpStatus.OK);
     }
+
+
 
     private String formatMessage(BindingResult result) {
         List<Map<String,String>> errors = result.getFieldErrors().stream()

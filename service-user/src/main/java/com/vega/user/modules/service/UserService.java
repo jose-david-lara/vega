@@ -2,7 +2,9 @@ package com.vega.user.modules.service;
 
 import com.vega.user.modules.client.ProductClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
 
     @Autowired
@@ -10,7 +12,7 @@ public class UserService {
 
     public String getProduct(){
 
-        String respuestaProducto = productClient.getProduct().getBody();
+        String respuestaProducto = productClient.getProduct().toString();
 
         System.out.println("::::::RESPUESTA PRODUCTO::::::"+respuestaProducto);
 

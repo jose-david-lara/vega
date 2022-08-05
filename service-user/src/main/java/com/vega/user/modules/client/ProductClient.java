@@ -1,6 +1,8 @@
 package com.vega.user.modules.client;
 
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.vega.user.modules.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
@@ -15,7 +17,10 @@ import javax.validation.Valid;
 //@RequestMapping("/product")
 public interface ProductClient {
 
+
+    @HystrixCommand
     @GetMapping(value = "/product/getProduct")
     public ResponseEntity<String> getProduct();
+
 
 }
