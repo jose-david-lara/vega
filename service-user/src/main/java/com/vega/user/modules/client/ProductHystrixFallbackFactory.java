@@ -12,7 +12,4 @@ public class ProductHystrixFallbackFactory implements ProductClient{
         return new ResponseEntity<String>("this.getProduct()888", HttpStatus.OK);
     }
 
-    private ResponseEntity<String> fallback_hello() {
-        return new ResponseEntity<String>("this.getProduct()", HttpStatus.OK);
-    }
 }

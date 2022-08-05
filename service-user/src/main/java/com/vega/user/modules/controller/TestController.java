@@ -8,8 +8,6 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.vega.user.modules.client.ProductHystrixFallbackFactory;
 import com.vega.user.modules.service.UserService;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.http.HttpStatus;
@@ -39,6 +37,7 @@ public class TestController extends UserService {
     }
 
 
+    @HystrixCommand
     @GetMapping(value = "/getProduct")
     public ResponseEntity<String> getProductController (){
 

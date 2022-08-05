@@ -12,9 +12,10 @@ public class UserService {
 
     public String getProduct(){
 
-        String respuestaProducto = productClient.getProduct().toString();
 
-        System.out.println("::::::RESPUESTA PRODUCTO::::::"+respuestaProducto);
+        String respuestaProducto = productClient.getProduct().getBody();
+
+                System.out.println("::::::RESPUESTA PRODUCTO::::::"+respuestaProducto);
 
         return respuestaProducto;
     }
