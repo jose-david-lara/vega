@@ -1,0 +1,71 @@
+
+
+#Host Port
+server:
+  port: 8092
+
+# Formato para las fechas
+spring:
+  jackson:
+    time-zone: America/Bogota
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+  datasource:
+    testWhileIdle: 'true'
+    hikari:
+      connection-timeout: '60000'
+      maximum-pool-size: '5'
+    driver-class-oracle:
+      jdbc:
+        driver:
+          OracleDriver: ''
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: 
+    databse: ORACLE
+    url: jdbc:mysql://localhost:3306/vega
+    jdbc-url: jdbc:mysql://localhost:3306/vega
+    validationQuery: SELECT 1
+  driverClassName: com.mysql.cj.jdbc.Driver
+  devtools:
+    restart:
+      enabled: 'false'
+    livereload:
+      enabled: 'false'
+  thymeleaf:
+    check-template: 'true'
+    prefix: classpath:/www/
+    enabled: 'true'
+    check-template-location: 'true'
+    suffix: .html
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  sql:
+    init:
+      mode: always
+      platform: MYSQL
+
+logging:
+    pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+feign:
+  hystrix:
+    enabled: true
+  circuitbreaker:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
