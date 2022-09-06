@@ -17,11 +17,11 @@ spring:
           enabled: true
       routes:
         - id: service-product
-          uri: lb://service-product
+          uri: lb://product
           predicates:
             - Path=/products/**
         - id: service-user
-          uri: lb://service-user
+          uri: lb://user
           predicates:
             - Path=/users/**
 
