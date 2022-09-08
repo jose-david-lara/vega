@@ -8,7 +8,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/  
-
+      
 spring:
   cloud:
     gateway:
@@ -24,5 +24,3 @@ spring:
           uri: lb://service-user
           predicates:
             - Path=/users/**
-
-
