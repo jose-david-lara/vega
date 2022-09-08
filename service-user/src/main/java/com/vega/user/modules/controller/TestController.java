@@ -23,7 +23,7 @@ import com.vega.user.spring.ErrorMessage;
 
 @RestController
 @EnableHystrix
-@RequestMapping(value = "/test")
+@RequestMapping(value = "/users")
 public class TestController extends UserService {
 
     @PostMapping(value = "/testUser")
